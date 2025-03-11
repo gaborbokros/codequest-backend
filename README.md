@@ -17,7 +17,21 @@
 ```python
 # The server's port (8080, 3000, ect..)
 PORT = 
+
+# Database configuration
+MONGO_URI = 
 ```
+
+## Models
+| `User`  | required  | unique  | index  | default  |
+|---|---|---|---|---|
+| _id  | ✅  | ✅  | ✅  | auto  |
+| name  | ✅  | ❌  | ❌  | -  |
+| username  | ✅  | ✅  | ✅  | -  |
+| email  | ✅  | ✅  | ✅  | -  |
+| password  | ✅  | ❌  | ❌  | -  |
+| createdAt  | ✅  | ❌  | ❌  | auto  |
+| updatedAt  | ✅  | ❌  | ❌  | auto  |
 
 ## What I Used 🛠️
 *Below is a list of all the technologies and packages used in this project:*
@@ -29,6 +43,7 @@ PORT =
     - **dotenv** – Load environment variables from a .env file
     - **cors** – Enable Cross-Origin Resource Sharing
     development
+    - **mongoose** – MongoDB ODM (if using MongoDB)
 - 🛠️ **Development Tools**
     - **nodemon** – Automatic server restart during 
     - **Postman** – API testing
