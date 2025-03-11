@@ -2,7 +2,7 @@
 
 ***⚙️ Application under development... ⚙️***
 
-## 🚀 How to start 
+## 🚀 How To Start 
 1. 📦 **Install dependencies:** Run the following command to install all required packages: `npm install`
 
 2. 📂 **Set up the environment variables:** Create a `.env` file in the root directory and add the following content.
@@ -22,7 +22,7 @@ PORT =
 MONGO_URI = 
 ```
 
-## Models
+## Models 🧩
 | `User`  | required  | unique  | index  | default  |
 |---|---|---|---|---|
 | _id  | ✅  | ✅  | ✅  | auto  |
@@ -32,6 +32,15 @@ MONGO_URI =
 | password  | ✅  | ❌  | ❌  | -  |
 | createdAt  | ✅  | ❌  | ❌  | auto  |
 | updatedAt  | ✅  | ❌  | ❌  | auto  |
+
+## Error Handling 🪲
+Due to unified client-side error messages, I created an error handler. Errors are located in the `/error` folder, while handling is implemented in `errorHandler.middleware.js`. The `next()` function forwards the error as an object, selecting the appropriate message based on the `code`. If no message is provided, a default server error is triggered. Errors may optionally or mandatorily include additional parameters (e.g., `path`, `message`, `type`).
+| `errors` | code  | message  | type  | value  | path  |
+|---|---|---|---|---| --- |
+| validation  | 400  | array  | ✅  | optional  | ❌  |
+| validation schema  | ❌  | ✅  | ❌  | ❌  | ❌  |
+| authentication  | 401  | ❌  | optional  | optional  | optional  |
+| server  | 500  | optional  | ❌  | ❌  | ❌  |
 
 ## What I Used 🛠️
 *Below is a list of all the technologies and packages used in this project:*
